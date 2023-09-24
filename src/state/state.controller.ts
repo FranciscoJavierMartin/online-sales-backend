@@ -1,7 +1,16 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { StateService } from './state.service';
 import { CreateStateDto } from './dto/create-state.dto';
 import { UpdateStateDto } from './dto/update-state.dto';
+import { StateEntity } from './entities/state.entity';
 
 @Controller('state')
 export class StateController {
@@ -13,8 +22,8 @@ export class StateController {
   }
 
   @Get()
-  findAll() {
-    return this.stateService.findAll();
+  async getAll(): Promise<StateEntity[]> {
+    return this.stateService.getAll();
   }
 
   @Get(':id')
