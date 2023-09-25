@@ -1,6 +1,7 @@
 import {
   Column,
   CreateDateColumn,
+  Entity,
   JoinColumn,
   ManyToOne,
   PrimaryGeneratedColumn,
@@ -9,6 +10,7 @@ import {
 import { CityEntity } from '@/city/entities/city.entity';
 import { UserEntity } from '@/user/entities/user.entity';
 
+@Entity({ name: 'address' })
 export class AddressEntity {
   @PrimaryGeneratedColumn('rowid')
   id: number;
