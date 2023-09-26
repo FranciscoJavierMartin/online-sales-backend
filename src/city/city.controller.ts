@@ -1,8 +1,9 @@
 import { Controller, Get, Param } from '@nestjs/common';
+import { ApiParam, ApiTags } from '@nestjs/swagger';
 import { CityService } from './city.service';
 import { CityEntity } from './entities/city.entity';
-import { ApiParam } from '@nestjs/swagger';
 
+@ApiTags('city')
 @Controller('city')
 export class CityController {
   constructor(private readonly cityService: CityService) {}
